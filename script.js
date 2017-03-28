@@ -17,10 +17,14 @@ function change() {
     }
 
     if (a === 'stop') {
-      clearInterval(x)
+      x = 0
+      color = "";
+      console.log(`a=${a}`)
+      console.log(`x=${x}`)
+      return false
     }
 
-    $('#bottom-light').css("background", color);
+    $('#bottom-light').css("background", color);  
 }
 
 $(document).ready(function() {
@@ -77,11 +81,11 @@ $(document).ready(function() {
    $('#button5').click(
      function() {
        a = 'stop'
-       $('#bottom-light').css("background", "green");
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
        $('#top-light').html("");
        $('#middle-light').html("");
+       $('#bottom-light').css("background", "green");
      }
    );
 
@@ -99,13 +103,12 @@ $(document).ready(function() {
    /* code for button 7 -- Make Green Light Blink -- Extension!! */
    $('#button7').click(
      function() {
-       a = 'stop'
+       a = 'theWordsIPutHereDontMatter'
        $('#bottom-light').css("background", "");
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
        $('#top-light').html("");
        $('#middle-light').html("");
-       a = 'theWordsIPutHereDontMatter'
        changeColors();
      }
    );

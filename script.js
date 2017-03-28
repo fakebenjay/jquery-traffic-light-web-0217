@@ -17,7 +17,7 @@ function change() {
     }
 
     if (a === 'stop') {
-      return
+      clearInterval(x)
     }
 
     $('#bottom-light').css("background", color);
@@ -105,7 +105,7 @@ $(document).ready(function() {
        $('#middle-light').css("background", "");
        $('#top-light').html("");
        $('#middle-light').html("");
-       a = ''
+       a = 'theWordsIPutHereDontMatter'
        changeColors();
      }
    );

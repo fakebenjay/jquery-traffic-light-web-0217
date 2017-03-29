@@ -1,8 +1,8 @@
 var x;
+let colorInterval
 
 function changeColors() {
-  x = 1;
-  setInterval(change, 500);
+  return setInterval(change, 500);
 }
 
 function change() {
@@ -17,9 +17,7 @@ function change() {
   else {
     color = "";
     console.log(`x=${x}`)
-    return false
   }
-
 
   $('#bottom-light').css("background", color);
 }
@@ -30,6 +28,7 @@ $(document).ready(function() {
    $('#button1').click(
      function() {
        x = 5
+       clearInterval(colorInterval)
        $('#top-light').css("background", "red");
        $('#middle-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -42,6 +41,7 @@ $(document).ready(function() {
    $('#button2').click(
      function() {
        x = 5
+       clearInterval(colorInterval)
        $('#top-light').html("<p> STOP </p>");
        $('#middle-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -54,6 +54,7 @@ $(document).ready(function() {
    $('#button3').click(
      function() {
        x = 5
+       clearInterval(colorInterval)
        $('#middle-light').css("background", "yellow");
        $('#top-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -66,6 +67,7 @@ $(document).ready(function() {
    $('#button4').click(
      function() {
        x = 5
+       clearInterval(colorInterval)
        $('#middle-light').html("<p> whoa hey now </p>");
        $('#top-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -78,6 +80,7 @@ $(document).ready(function() {
    $('#button5').click(
      function() {
        x = 5
+       clearInterval(colorInterval)
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
        $('#top-light').html("");
@@ -100,12 +103,13 @@ $(document).ready(function() {
    /* code for button 7 -- Make Green Light Blink -- Extension!! */
    $('#button7').click(
      function() {
+       x = 1;
        $('#bottom-light').css("background", "");
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
        $('#top-light').html("");
        $('#middle-light').html("");
-       changeColors();
+       colorInterval = changeColors();
      }
    );
 

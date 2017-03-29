@@ -1,5 +1,5 @@
 var x;
-let colorInterval
+let colorInterval;
 
 function changeColors() {
   return setInterval(change, 500);
@@ -104,6 +104,7 @@ $(document).ready(function() {
    $('#button7').click(
      function() {
        x = 1;
+       clearInterval(colorInterval)
        $('#bottom-light').css("background", "");
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");

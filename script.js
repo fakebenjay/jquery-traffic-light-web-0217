@@ -1,15 +1,8 @@
 var x;
-var a;
 
 function changeColors() {
   x = 1;
   setInterval(change, 500);
-
-  if (a === 'stop') {
-    $('#bottom-light').css("background", "");
-    x = 0
-    return false
-  }
 }
 
 function change() {
@@ -21,14 +14,12 @@ function change() {
     color = "";
     x = 1;
   }
-
-  if (a === 'stop') {
+  else {
     color = "";
-    console.log(`a=${a}`)
     console.log(`x=${x}`)
-    x = 0
-    return true
+    return false
   }
+
 
   $('#bottom-light').css("background", color);
 }
@@ -38,7 +29,7 @@ $(document).ready(function() {
    /* code for button 1  -- Turn the light Red */
    $('#button1').click(
      function() {
-       a = 'stop'
+       x = 5
        $('#top-light').css("background", "red");
        $('#middle-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -50,7 +41,7 @@ $(document).ready(function() {
    /* code for button 2 --- Say STOP */
    $('#button2').click(
      function() {
-       a = 'stop'
+       x = 5
        $('#top-light').html("<p> STOP </p>");
        $('#middle-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -62,7 +53,7 @@ $(document).ready(function() {
    /* code for button 3 -- Turn the light Yellow */
    $('#button3').click(
      function() {
-       a = 'stop'
+       x = 5
        $('#middle-light').css("background", "yellow");
        $('#top-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -74,7 +65,7 @@ $(document).ready(function() {
    /* code for button 4 -- Say whoa hey now */
    $('#button4').click(
      function() {
-       a = 'stop'
+       x = 5
        $('#middle-light').html("<p> whoa hey now </p>");
        $('#top-light').css("background", "");
        $('#bottom-light').css("background", "");
@@ -86,7 +77,7 @@ $(document).ready(function() {
    /* code for button 5 -- Turn the light Green */
    $('#button5').click(
      function() {
-       a = 'stop'
+       x = 5
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
        $('#top-light').html("");
@@ -109,8 +100,6 @@ $(document).ready(function() {
    /* code for button 7 -- Make Green Light Blink -- Extension!! */
    $('#button7').click(
      function() {
-       a = 'stop'
-       a = 'theWordsIPutHereDontMatter'
        $('#bottom-light').css("background", "");
        $('#top-light').css("background", "");
        $('#middle-light').css("background", "");
